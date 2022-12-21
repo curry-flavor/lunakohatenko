@@ -11,19 +11,19 @@
       document.write("test<BR>");
       document.write(String(Math.floor(100 * document.body.clientWidth/900)));
       document.write("<BR>");
-      let aw = document.body.clientWidth/900;
-      let ah = document.body.clientHeight/400;
+      let aw = document.documentElement.clientWidth/900;
+      let ah = document.documentElement.clientHeight/400;
       document.write("rate " + String(aw) + " : " + String(ah));
       document.write("<BR>");
       if ( aw < 1) {
           // 横がはみ出している →縮小率の大きい方に合わせて縮小する
           if (aw < ah) {
               ah = 400 * aw;
-              ah = ah/document.body.clientHeight;
+              ah = ah/document.documentElement.clientHeight;
               document.write("case1 w=" + String(aw) + " : h=" + String(ah) + "<BR>");
           } else {
               aw = 900 * ah;
-              aw = aw/document.body.clientWidth;
+              aw = aw/document.documentElement.clientWidth;
               document.write("case2 w=" + String(aw) + " : h=" + String(ah) + "<BR>");
           }
       } else {
@@ -31,17 +31,17 @@
           if (ah < 1) {
               // 縦がはみ出している → 縦に合わせて縮小
               aw = 900 * ah;
-              aw = aw/document.body.clientWidth;
+              aw = aw/document.documentElement.clientWidth;
               document.write("case3 w=" + String(aw) + " : h=" + String(ah) + "<BR>");
           } else {
               // どちらも拡大したい → 拡大率の小さい方に合わせて拡大する
               if (aw < ah) {
                   ah = 400 * aw;
-                  ah = ah/document.body.clientHeight;
+                  ah = ah/document.documentElement.clientHeight;
                   document.write("case4 w=" + String(aw) + " : h=" + String(ah) + "<BR>");
               } else {
                   aw = 900 * ah;
-                  aw = aw/document.body.clientWidth;
+                  aw = aw/document.documentElement.clientWidth;
                   document.write("case5 w=" + String(aw) + " : h=" + String(ah) + "<BR>");
               }
           }
