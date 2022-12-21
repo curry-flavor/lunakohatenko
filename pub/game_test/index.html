@@ -9,9 +9,6 @@
     <canvas id="unity-canvas" width=900 height=400 style="width: 900px; height: 400px; background: #231F20"></canvas>
     <script src="Build/BuildWebGL.loader.js"></script>
     <script>
-      document.wrte("test<BR>");
-      document.write(String(Math.floor(100 * document.body.clientWidth/900));
-      document.wrte("<BR>");
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
         var meta = document.createElement('meta');
@@ -21,7 +18,7 @@
 
         var canvas = document.querySelector("#unity-canvas");
         canvas.style.width = "100%";
-        canvas.style.height = String(Math.floor(100 * document.body.clientWidth/900) + "%";
+        canvas.style.height = String(Math.floor(100 * document.body.clientWidth/900)) + "%";
         canvas.style.position = "fixed";
 
         document.body.style.textAlign = "left";
