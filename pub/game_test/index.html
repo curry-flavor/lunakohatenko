@@ -20,6 +20,7 @@
 
         let aw = document.body.clientWidth/900;
         let ah = document.body.clientHeight/400;
+        document.write("<BR>");
         if ( aw < 1) {
             // 横がはみ出している →縮小率の大きい方に合わせて縮小する
             if (aw < ah) {
@@ -27,11 +28,13 @@
                 ah = 400 * aw;
                 ah = document.body.clientHeight/ah;
                 canvas.style.height = String(Math.floor(100 * ah)) + "%";
+                document.write("case1 w=" + String(aw) + " : h=" + String(ah) + "<BR>");
             } else {
                 aw = 900 * ah;
                 aw = document.body.clientWidth/aw;
                 canvas.style.width = String(Math.floor(100 * aw)) + "%";
                 canvas.style.height = "100%";
+                document.write("case2 w=" + String(aw) + " : h=" + String(ah) + "<BR>");
             }
         } else {
             // 横は収まっている
@@ -41,6 +44,7 @@
                 aw = document.body.clientWidth/aw;
                 canvas.style.width = String(Math.floor(100 * aw)) + "%";
                 canvas.style.height = "100%";
+                document.write("case3 w=" + String(aw) + " : h=" + String(ah) + "<BR>");
             } else {
                 // どちらも拡大したい → 拡大率の小さい方に合わせて拡大する
                 if (aw < ah) {
@@ -48,11 +52,13 @@
                     ah = 400 * aw;
                     ah = document.body.clientHeight/ah;
                     canvas.style.height = String(Math.floor(100 * ah)) + "%";
+                    document.write("case4 w=" + String(aw) + " : h=" + String(ah) + "<BR>");
                 } else {
                     aw = 900 * ah;
                     aw = document.body.clientWidth/aw;
                     canvas.style.width = String(Math.floor(100 * aw)) + "%";
                     canvas.style.height = "100%";
+                    document.write("case5 w=" + String(aw) + " : h=" + String(ah) + "<BR>");
                 }
             }
         }
