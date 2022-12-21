@@ -24,24 +24,34 @@
             // 横がはみ出している →縮小率の大きい方に合わせて縮小する
             if (aw < ah) {
                 canvas.style.width = "100%";
-                canvas.style.height = String(Math.floor(100 * aw)) + "%";
+                ah = 400 * aw;
+                ah = document.body.clientHeight/ah;
+                canvas.style.height = String(Math.floor(100 * ah)) + "%";
             } else {
-                canvas.style.width = String(Math.floor(100 * ah)) + "%";
+                aw = 900 * ah;
+                aw = document.body.clientWidth/aw;
+                canvas.style.width = String(Math.floor(100 * aw)) + "%";
                 canvas.style.height = "100%";
             }
         } else {
             // 横は収まっている
             if (ah < 1) {
                 // 縦がはみ出している → 縦に合わせて縮小
-                canvas.style.width = String(Math.floor(100 * ah)) + "%";
+                aw = 900 * ah;
+                aw = document.body.clientWidth/aw;
+                canvas.style.width = String(Math.floor(100 * aw)) + "%";
                 canvas.style.height = "100%";
             } else {
                 // どちらも拡大したい → 拡大率の小さい方に合わせて拡大する
                 if (aw < ah) {
                     canvas.style.width = "100%";
-                    canvas.style.height = String(Math.floor(100 * aw)) + "%";
+                    ah = 400 * aw;
+                    ah = document.body.clientHeight/ah;
+                    canvas.style.height = String(Math.floor(100 * ah)) + "%";
                 } else {
-                    canvas.style.width = String(Math.floor(100 * ah)) + "%";
+                    aw = 900 * ah;
+                    aw = document.body.clientWidth/aw;
+                    canvas.style.width = String(Math.floor(100 * aw)) + "%";
                     canvas.style.height = "100%";
                 }
             }
