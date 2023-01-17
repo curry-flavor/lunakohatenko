@@ -25,11 +25,11 @@
             if (aw < ah) {
                 canvas.style.width = "100%";
                 ah = 400 * aw;
-                ah = document.documentElement.clientHeight/ah;
+                ah = ah / document.documentElement.clientHeight;
                 canvas.style.height = String(Math.floor(100 * ah)) + "%";
             } else {
                 aw = 900 * ah;
-                aw = document.documentElement.clientWidth/aw;
+                aw = aw / document.documentElement.clientWidth;
                 canvas.style.width = String(Math.floor(100 * aw)) + "%";
                 canvas.style.height = "100%";
             }
@@ -38,7 +38,7 @@
             if (ah < 1) {
                 // 縦がはみ出している → 縦に合わせて縮小
                 aw = 900 * ah;
-                aw = document.documentElement.clientWidth/aw;
+                aw = aw / document.documentElement.clientWidth;
                 canvas.style.width = String(Math.floor(100 * aw)) + "%";
                 canvas.style.height = "100%";
             } else {
@@ -46,11 +46,11 @@
                 if (aw < ah) {
                     canvas.style.width = "100%";
                     ah = 400 * aw;
-                    ah = document.documentElement.clientHeight/ah;
+                    ah = ah / document.documentElement.clientHeight;
                     canvas.style.height = String(Math.floor(100 * ah)) + "%";
                 } else {
                     aw = 900 * ah;
-                    aw = document.documentElement.clientWidth/aw;
+                    aw = aw / document.documentElement.clientWidth;
                     canvas.style.width = String(Math.floor(100 * aw)) + "%";
                     canvas.style.height = "100%";
                 }
